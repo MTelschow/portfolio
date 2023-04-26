@@ -8,7 +8,7 @@ const devOnlyPlugins = [getStartedPlugin()]
 
 export default defineConfig({
   name: 'default',
-  title: 'tomato-trout',
+  title: 'portfolio',
 
   projectId: '8udx1d7a',
   dataset: 'production',
