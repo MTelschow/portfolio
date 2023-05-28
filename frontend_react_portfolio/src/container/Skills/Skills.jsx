@@ -19,6 +19,7 @@ const Skills = () => {
     });
 
     client.fetch(skillsQuery).then((data) => {
+      data.sort((a, b) => a.id - b.id);
       setSkills(data);
     });
   }, []);

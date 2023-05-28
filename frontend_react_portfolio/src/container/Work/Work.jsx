@@ -16,6 +16,7 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
+      data.sort((a, b) => a.id - b.id);
       setWorks(data);
       setFilterWork(data);
     });
