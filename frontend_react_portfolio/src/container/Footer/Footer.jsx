@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import emailjs from '@emailjs/browser';
+
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
@@ -26,6 +28,17 @@ const Footer = () => {
       email: formData.email,
       message: formData.message,
     };
+
+    emailjs.send(
+      'service_xll97wx',
+      'template_rmx7qb8',
+      {
+        user_name: formData.username,
+        message: formData.message,
+        user_email: formData.email,
+      },
+      'C64qDvt3AHFZWgQOo',
+    );
 
     client.create(contact)
       .then(() => {
